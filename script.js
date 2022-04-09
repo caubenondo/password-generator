@@ -1,8 +1,9 @@
 // BASE ARRAYS
 // look up table ASCII https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters
-// look up table for special character
+// append special characters into empty array 
 
-// Why doing it this way? I'm lazy to type out the whole character set
+// Why doing it this way? 
+// I'm lazy to type out the whole character set
 const uppercaseLettersArray = charLookup(65, 90);
 const lowercaseLeetersArray = charLookup(97, 122);
 const numberArray = charLookup(48, 57);
@@ -10,6 +11,7 @@ const specialCharsArray = charLookup(33, 47)
   .concat(charLookup(58, 64))
   .concat(charLookup(91, 96))
   .concat(charLookup(123, 126));
+
 function charLookup(start, end) {
   let arrayOfChar = [];
   for (let i = start; i <= end; i++) {
@@ -43,7 +45,7 @@ function generatePassword() {
       }
       return passString;
     } else {
-      return "Password must has at least 8 chars and less than 128 chars";
+      return "Password must have at least 8 chars and less than 128 chars";
     }
   } else {
     return "Make sure you type a number in password length";
@@ -73,7 +75,7 @@ function acceptableArrayGenerator() {
   }
   if (acceptedArray.length == 0) {
     // make sure user select one of the requirement
-    alert("Please pick as meet 1 requirement!");
+    alert("Please pick as least 1 requirement!");
     return acceptableArrayGenerator();
   } else {
     // console.log(acceptedArray);
